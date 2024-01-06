@@ -29,6 +29,24 @@ void loop() {
       delay(9000);
   }
   
+  // print time every second
+  print2digits(tm.Hour);
+  Serial.write(':');
+  print2digits(tm.Minute);
+  Serial.write(':');
+  print2digits(tm.Second);
+  Serial.println();
+
+  // print date
+  Serial.print(tm.Day);
+  Serial.write(' ');
+  Serial.print(tm.Month`);
+  Serial.write(' ');
+  Serial.print(tmYearToCalendar(tm.Year));
+  Serial.println();
+
+  delay(60000);
+   
   if (tm.Hour == 7 && tm.Minute == 0 && tm.Second == 0) {
     // turn on LED
     // print the time:
